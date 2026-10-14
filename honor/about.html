@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О проекте разблокировки загрузчика Honor 8X JSN-L21">
+  <title>О проекте — Honor 8X Unlock</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔓</span>
+        Honor 8X Unlock
+      </a>
+      <button class="menu-toggle" aria-label="Меню">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html" class="active">О проекте</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">О проекте</span>
+      <h1>Зачем этот сайт</h1>
+      <p>Сборник проверенных подходов и инструкций по разблокировке загрузчика Honor 8X (JSN-L21) с акцентом на Android Tool и HiSuite Proxy.</p>
+    </section>
+
+    <section>
+      <h2>🎯 Цель проекта</h2>
+      <p>После того как Huawei прекратила выдачу официальных кодов разблокировки, сообщество разработало альтернативные методы. Этот сайт систематизирует информацию специально для модели <strong>Honor 8X (JSN-L21)</strong> на процессоре <strong>Kirin 710</strong>.</p>
+      <p>Основные задачи:</p>
+      <ul>
+        <li>Показать, как с помощью <strong>HiSuite Proxy</strong> подготовить устройство (даунгрейд на поддерживаемую версию EMUI).</li>
+        <li>Описать работу с <strong>Android Tool / Android Utility</strong> для загрузки factory fastboot и снятия блокировки.</li>
+        <li>Дать безопасные чеклисты и предупреждения о рисках.</li>
+        <li>Предоставить структуру, готовую к публикации на GitHub Pages.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🛠️ Технический стек сайта</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <h3>HTML5</h3>
+          <p>Семантическая разметка: header, main, section, nav, footer.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <h3>CSS3</h3>
+          <p>Адаптивный дизайн, CSS-переменные, grid/flex, тёмная тема.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>Мобильное меню, localStorage для чеклиста и формы, активная навигация.</p>
+        </div>
+      </div>
+      <p>Хостинг: <strong>GitHub Pages</strong>. Контроль версий: <strong>Git</strong>. Редактор: Visual Studio Code.</p>
+    </section>
+
+    <section>
+      <h2>📱 Об устройстве</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Модель</td>
+              <td>Honor 8X (JSN-L21, JSN-L22, JSN-L23, JSN-AL00)</td>
+            </tr>
+            <tr>
+              <td>Процессор</td>
+              <td>HiSilicon Kirin 710</td>
+            </tr>
+            <tr>
+              <td>ОС из коробки</td>
+              <td>Android 8.1 (EMUI 8.2)</td>
+            </tr>
+            <tr>
+              <td>Макс. официальная</td>
+              <td>Android 10 (EMUI 10 / Magic UI)</td>
+            </tr>
+            <tr>
+              <td>Особенности unlock</td>
+              <td>Часто требуется testpoint + factory fastboot loader</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>⚖️ Отказ от ответственности</h2>
+      <div class="alert alert-danger">
+        Все материалы предоставлены исключительно в образовательных целях. Разблокировка загрузчика:
+        <ul style="margin-top:0.5rem;">
+          <li>стирает все данные пользователя;</li>
+          <li>может привести к потере гарантии;</li>
+          <li>при ошибках может «закирпичить» устройство;</li>
+          <li>на части прошивок может быть невозможна без вскрытия корпуса.</li>
+        </ul>
+        Автор и контрибьюторы не несут ответственности за любой ущерб. Вы действуете на свой страх и риск.
+      </div>
+    </section>
+
+    <section>
+      <h2>📂 Структура репозитория</h2>
+      <pre><code>honor8x-unlock/
+├── index.html      # Главная — инструкция
+├── about.html      # О проекте
+├── contact.html    # Контакты
+├── blog.html       # Блог / новости
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── assets/         # изображения (опционально)</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Honor 8X (JSN-L21) Bootloader Unlock Guide · <a href="index.html">На главную</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

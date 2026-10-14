@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты и обратная связь — Honor 8X Unlock">
+  <title>Контакты — Honor 8X Unlock</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔓</span>
+        Honor 8X Unlock
+      </a>
+      <button class="menu-toggle" aria-label="Меню">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О проекте</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contact.html" class="active">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">Связь</span>
+      <h1>Контакты</h1>
+      <p>Есть вопросы по разблокировке Honor 8X, нашли ошибку или хотите дополнить инструкцию? Напишите.</p>
+    </section>
+
+    <section>
+      <h2>✉️ Форма обратной связи</h2>
+      <p>Сообщения сохраняются локально в браузере (localStorage) — это демонстрация интерактивности. Для реальной связи используйте GitHub Issues вашего репозитория.</p>
+
+      <form id="contact-form" style="max-width:520px;">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" placeholder="Опишите вопрос или предложение..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Отправить</button>
+        <div id="form-msg" class="form-msg"></div>
+      </form>
+    </section>
+
+    <section>
+      <h2>🔗 Полезные ресурсы сообщества</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>XDA Developers</h3>
+          <p>Форумы по Honor 8X, ветки по unlock, root и custom ROM.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>GitHub</h3>
+          <p>Репозитории HiSuite-Proxy, Android Utility, Kirin-инструментов.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>4PDA / Telegram</h3>
+          <p>Русскоязычные обсуждения прошивок и сервисных инструментов.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert alert-info">
+      Не присылайте IMEI, серийные номера и другие персональные данные устройства в открытых чатах. Для платных сервисов unlock используйте только проверенные источники.
+    </div>
+  </main>
+
+  <footer>
+    <p>Honor 8X (JSN-L21) Bootloader Unlock Guide · <a href="index.html">На главную</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

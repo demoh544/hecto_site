@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Блог и новости по разблокировке Honor 8X">
+  <title>Блог — Honor 8X Unlock</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔓</span>
+        Honor 8X Unlock
+      </a>
+      <button class="menu-toggle" aria-label="Меню">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О проекте</a></li>
+        <li><a href="blog.html" class="active">Блог</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">Новости</span>
+      <h1>Блог / Новости</h1>
+      <p>Обновления методов, заметки по инструментам и полезные советы для владельцев Honor 8X.</p>
+    </section>
+
+    <section class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-meta">14 октября 2026 · Инструкция</div>
+        <h3>Старт проекта: сайт-руководство по unlock JSN-L21</h3>
+        <p>Опубликована первая версия сайта с пошаговой инструкцией по использованию Android Tool и HiSuite Proxy для разблокировки загрузчика Honor 8X.</p>
+        <p>Включены: чеклист с localStorage, адаптивная вёрстка, предупреждения о рисках и структура под GitHub Pages.</p>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">Советы · HiSuite Proxy</div>
+        <h3>Зачем нужен даунгрейд перед unlock</h3>
+        <p>На EMUI 10+ команда <code>fastboot oem unlock</code> часто удалена. HiSuite Proxy позволяет откатиться на EMUI 9.1 / 9.0, где factory fastboot и сервисные инструменты работают стабильнее.</p>
+        <p>Рекомендуется брать пакеты Base + CUST + Preload из Firmware Finder и подставлять их в Proxy.</p>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">Инструменты · Android Tool</div>
+        <h3>Android Utility и Kirin 710</h3>
+        <p>Android Tool / Android Utility умеет загружать factory fastboot на устройствах с Kirin 710. Часто для этого требуется режим VCOM (testpoint).</p>
+        <p>После успешной загрузки fastboot можно выполнить unlock через сам инструмент или классическую команду <code>fastboot oem unlock</code>.</p>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">Безопасность</div>
+        <h3>Что делать, если что-то пошло не так</h3>
+        <p>Если телефон не включается после операций:</p>
+        <ul>
+          <li>Попробуйте eRecovery (Vol+ + Power) и скачать официальную прошивку.</li>
+          <li>Используйте dload-метод (папка dload на SD-карте + Vol+ + Vol- + Power).</li>
+          <li>В крайнем случае — service firmware через testpoint и Multi-Tool / IDT.</li>
+        </ul>
+        <p>Всегда имейте под рукой рабочую stock-прошивку для вашей региональной версии (C432 и т.д.).</p>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">Сообщество</div>
+        <h3>Альтернативные методы (краткий обзор)</h3>
+        <p>Помимо Android Tool + HiSuite Proxy существуют:</p>
+        <ul>
+          <li>Платные сервисы прямого unlock по USB (без кода).</li>
+          <li>KirinTool + testpoint для permanent unlock на 710/970/980.</li>
+          <li>PotatoNV — только для более старых Kirin (не 710).</li>
+        </ul>
+        <p>Выбор метода зависит от текущей версии EMUI и готовности вскрывать корпус.</p>
+      </article>
+    </section>
+
+    <div class="alert alert-info" style="margin-top:2rem;">
+      Хотите добавить свою заметку? Сделайте fork репозитория и отправьте Pull Request, либо напишите через <a href="contact.html" style="color:inherit;text-decoration:underline;">форму контактов</a>.
+    </div>
+  </main>
+
+  <footer>
+    <p>Honor 8X (JSN-L21) Bootloader Unlock Guide · <a href="index.html">На главную</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
