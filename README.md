@@ -7,13 +7,13 @@
 
 ## 📱 Об устройстве
 
-| Параметр | Значение |
-|----------|----------|
-| **Модель** | Honor 8X |
-| **Коды** | JSN-L21, JSN-L22, JSN-L23, JSN-AL00 |
-| **SoC** | HiSilicon Kirin 710 |
-| **ОС из коробки** | Android 8.1 (EMUI 8.2) |
-| **Макс. официальная** | Android 10 (EMUI 10 / Magic UI) |
+| Параметр               | Значение                                 |
+| ---------------------- | ---------------------------------------- |
+| **Модель**             | Honor 8X                                 |
+| **Коды**               | JSN-L21, JSN-L22, JSN-L23, JSN-AL00      |
+| **SoC**                | HiSilicon Kirin 710                      |
+| **ОС из коробки**      | Android 8.1 (EMUI 8.2)                   |
+| **Макс. официальная**  | Android 10 (EMUI 10 / Magic UI)          |
 | **Особенность unlock** | Часто нужен testpoint + factory fastboot |
 
 ---
@@ -29,7 +29,7 @@ flowchart TD
     D --> F[Потеря гарантии]
     D --> G[Возможный brick]
     D --> H[Неофициальные методы]
-    
+
     style E fill:#7f1d1d,color:#fff
     style F fill:#7f1d1d,color:#fff
     style G fill:#7f1d1d,color:#fff
@@ -37,6 +37,7 @@ flowchart TD
 ```
 
 > **Важно!**  
+> 
 > - Разблокировка загрузчика **полностью стирает** все данные.  
 > - Официальный способ получения кода от Huawei **больше недоступен**.  
 > - Методы ниже — **неофициальные** и могут не работать на всех версиях прошивки.  
@@ -69,13 +70,13 @@ mindmap
       Base + CUST + Preload
 ```
 
-| Инструмент | Назначение |
-|------------|------------|
-| **HiSuite** | Официальный менеджер + драйверы USB |
-| **HiSuite Proxy** | Подмена OTA / даунгрейд прошивки |
+| Инструмент                         | Назначение                                   |
+| ---------------------------------- | -------------------------------------------- |
+| **HiSuite**                        | Официальный менеджер + драйверы USB          |
+| **HiSuite Proxy**                  | Подмена OTA / даунгрейд прошивки             |
 | **Android Utility / Android Tool** | Сервисные операции, factory fastboot, unlock |
-| **Platform-Tools (ADB/Fastboot)** | Команды `fastboot oem unlock` и диагностика |
-| **Firmware Finder (TeamMT)** | Поиск пакетов прошивок для Proxy |
+| **Platform-Tools (ADB/Fastboot)**  | Команды `fastboot oem unlock` и диагностика  |
+| **Firmware Finder (TeamMT)**       | Поиск пакетов прошивок для Proxy             |
 
 ---
 
@@ -88,7 +89,7 @@ flowchart LR
     C --> D[fastboot oem unlock]
     D --> E[Проверка статуса]
     E --> F[✅ Разблокировано]
-    
+
     style A fill:#1e3a5f,color:#fff
     style B fill:#0e4d64,color:#fff
     style C fill:#0e4d64,color:#fff
@@ -116,7 +117,7 @@ flowchart TD
     F --> F1[Отладка по USB]
     F --> F2[Разблокировка OEM]
     F1 & F2 --> G[✅ Готово к работе]
-    
+
     style G fill:#166534,color:#fff
 ```
 
@@ -200,7 +201,7 @@ flowchart TD
     H --> I[Команда unlock]
     I --> J[Подтверждение на телефоне<br/>Vol+]
     J --> K[✅ Bootloader unlocked]
-    
+
     style K fill:#166534,color:#fff
     style D fill:#78350f,color:#fff
 ```
@@ -252,7 +253,7 @@ flowchart LR
     A[fastboot oem lock-state info] --> B{Статус?}
     B -->|UNLOCKED| C[✅ Успех]
     B -->|LOCKED| D[❌ Повторить процесс]
-    
+
     style C fill:#166534,color:#fff
     style D fill:#7f1d1d,color:#fff
 ```
@@ -271,7 +272,7 @@ flowchart TD
         E[☐ Загрузчик разблокирован]
         F[☐ Проверен статус unlock]
     end
-    
+
     A --> B --> C --> D --> E --> F
 ```
 
@@ -291,14 +292,14 @@ flowchart TD
     A[Телефон не включается] --> B[eRecovery]
     B --> B1[Vol+ + Power]
     B1 --> B2[Скачать официальную прошивку]
-    
+
     A --> C[dload-метод]
     C --> C1[Папка dload на SD-карте]
     C1 --> C2[Vol+ + Vol- + Power]
-    
+
     A --> D[Service Firmware]
     D --> D1[Testpoint + Multi-Tool / IDT]
-    
+
     style A fill:#7f1d1d,color:#fff
 ```
 
@@ -360,5 +361,4 @@ honor8x-unlock/
 
 <p align="center">
   <b>Honor 8X (JSN-L21) · Kirin 710 · Android Tool + HiSuite Proxy</b><br>
-  Только для образовательных целей
 </p>
