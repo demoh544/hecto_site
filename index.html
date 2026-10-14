@@ -1,12 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hectogrox site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Руководство по разблокировке загрузчика Honor 8X (JSN-L21) через Android Tool и HiSuite Proxy">
+  <title>Разблокировка загрузчика Honor 8X (JSN-L21)</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Это мой первый сайт на GitHub Pages</h2>
-    <img src="img/img.png">
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔓</span>
+        Honor 8X Unlock
+      </a>
+      <button class="menu-toggle" aria-label="Меню">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Главная</a></li>
+        <li><a href="about.html">О проекте</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">JSN-L21 · Kirin 710</span>
+      <h1>Разблокировка загрузчика Honor 8X</h1>
+      <p>Подробное руководство по разблокировке bootloader с помощью Android Tool и HiSuite Proxy. Позволяет установить кастомные recovery, root и альтернативные прошивки.</p>
+      <div class="btn-group">
+        <a href="#guide" class="btn">Начать инструкцию</a>
+        <a href="about.html" class="btn btn-outline">О проекте</a>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Модель</h3>
+        <p>Honor 8X (JSN-L21 / JSN-L22 / JSN-L23). Процессор Kirin 710. Поддержка EMUI 8–9.1.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Инструменты</h3>
+        <p>Android Tool (Android Utility), HiSuite Proxy, HiSuite, ADB/Fastboot, драйверы Huawei.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>Риски</h3>
+        <p>Сброс данных, возможный brick, потеря гарантии. Действуйте на свой страх и риск.</p>
+      </div>
+    </section>
+
+    <div class="alert alert-danger">
+      <strong>Важно!</strong> Разблокировка загрузчика полностью стирает все данные на устройстве. Сделайте резервную копию. Официальный способ получения кода от Huawei больше недоступен. Методы ниже — неофициальные и могут не работать на всех версиях прошивки.
+    </div>
+
+    <section id="guide">
+      <h2>📋 Пошаговая инструкция</h2>
+
+      <h3>1. Подготовка</h3>
+      <ul class="step-list">
+        <li>Сделайте полный бэкап данных через HiSuite или вручную (фото, контакты, приложения).</li>
+        <li>Зарядите телефон минимум до 60–70%.</li>
+        <li>Установите на ПК: HiSuite (для драйверов), ADB & Fastboot Platform-Tools.</li>
+        <li>Скачайте Android Tool / Android Utility и HiSuite Proxy.</li>
+        <li>Включите режим разработчика: Настройки → О телефоне → 7 раз нажмите на «Номер сборки».</li>
+        <li>Включите «Отладка по USB» и «Разблокировка OEM» в параметрах разработчика.</li>
+      </ul>
+
+      <h3>2. HiSuite Proxy — даунгрейд / подготовка прошивки</h3>
+      <p>HiSuite Proxy позволяет подменить ответы серверов Huawei и установить нужную версию прошивки (часто требуется даунгрейд до EMUI 9.1 или ниже для успешной разблокировки).</p>
+      <ul class="step-list">
+        <li>Установите совместимую версию HiSuite (рекомендуется 10.x / 11.x).</li>
+        <li>Запустите HiSuite Proxy от имени администратора и выполните SETUP (патч httpcomponent.dll).</li>
+        <li>В Firmware Finder (TeamMT) найдите подходящую прошивку для JSN-L21 (Base + CUST + Preload при необходимости).</li>
+        <li>Вставьте Package URL, Version ID и имя в HiSuite Proxy.</li>
+        <li>Подключите телефон, в HiSuite нажмите «Обновить». Proxy перехватит запрос и подставит нужную прошивку.</li>
+      </ul>
+
+      <div class="alert alert-info">
+        HiSuite Proxy полезен для даунгрейда на версии, где ещё работает fastboot oem unlock или проще использовать Android Tool. На EMUI 10+ команда oem unlock часто отсутствует.
+      </div>
+
+      <h3>3. Android Tool (Android Utility) — разблокировка</h3>
+      <p>Android Utility / Android Tool поддерживает операции с Kirin 710, включая загрузку factory fastboot и снятие защиты.</p>
+      <ul class="step-list">
+        <li>Установите драйверы Huawei USB (из HiSuite) — устройство должно определяться как HUAWEI USB COM 1.0 в режиме testpoint / VCOM.</li>
+        <li>При необходимости используйте testpoint (короткое замыкание точек на плате) для входа в режим COM-порта.</li>
+        <li>В Android Tool выберите модель / CPU: Kirin 710.</li>
+        <li>Выполните «Load Factory Fastboot» или аналогичную операцию разблокировки.</li>
+        <li>После появления fastboot-устройства выполните в командной строке:</li>
+      </ul>
+      <pre><code>fastboot devices
+fastboot oem unlock</code></pre>
+      <p>Или используйте встроенную функцию Unlock в инструменте. Подтвердите на устройстве (кнопка громкости +).</p>
+
+      <div class="alert alert-warning">
+        На многих современных сборках Kirin 710 требуется testpoint + специальный loader. Без вскрытия корпуса классический fastboot oem unlock часто недоступен.
+      </div>
+
+      <h3>4. Проверка результата</h3>
+      <pre><code>fastboot oem lock-state info
+# или
+fastboot getvar unlocked</code></pre>
+      <p>Статус должен показывать <code>unlocked</code> / <code>FB LockState: UNLOCKED</code>.</p>
+    </section>
+
+    <section>
+      <h2>✅ Чеклист прогресса</h2>
+      <div class="progress-box">
+        <h3>Ваш прогресс <span id="progress-text">0 / 6 (0%)</span></h3>
+        <div style="background:#0d1117;border-radius:8px;height:10px;margin:0.75rem 0 1rem;overflow:hidden;">
+          <div id="progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#00a0e3,#22c55e);transition:width 0.3s;"></div>
+        </div>
+        <label class="check-item"><input type="checkbox" data-key="backup"> Сделан бэкап данных</label>
+        <label class="check-item"><input type="checkbox" data-key="drivers"> Установлены драйверы и ADB</label>
+        <label class="check-item"><input type="checkbox" data-key="hisuite"> Настроен HiSuite Proxy</label>
+        <label class="check-item"><input type="checkbox" data-key="downgrade"> Выполнен даунгрейд (при необходимости)</label>
+        <label class="check-item"><input type="checkbox" data-key="unlock"> Загрузчик разблокирован</label>
+        <label class="check-item"><input type="checkbox" data-key="verify"> Проверен статус unlock</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>📦 Полезные ссылки</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Инструмент</th>
+              <th>Назначение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HiSuite</td>
+              <td>Официальный менеджер + драйверы USB</td>
+            </tr>
+            <tr>
+              <td>HiSuite Proxy</td>
+              <td>Подмена OTA / даунгрейд прошивки</td>
+            </tr>
+            <tr>
+              <td>Android Utility / Android Tool</td>
+              <td>Сервисные операции, factory fastboot, unlock</td>
+            </tr>
+            <tr>
+              <td>Platform-Tools (ADB/Fastboot)</td>
+              <td>Команды fastboot oem unlock и диагностика</td>
+            </tr>
+            <tr>
+              <td>Firmware Finder (TeamMT)</td>
+              <td>Поиск пакетов прошивок для Proxy</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="alert alert-warning">
+      Этот сайт носит исключительно образовательный характер. Автор не несёт ответственности за повреждение устройств. Все действия вы выполняете самостоятельно.
+    </div>
+  </main>
+
+  <footer>
+    <p>Honor 8X (JSN-L21) Bootloader Unlock Guide · <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+    <p style="margin-top:0.4rem;font-size:0.8rem;">Только для образовательных целей. Используйте на свой риск.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
